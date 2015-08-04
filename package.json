@@ -24,7 +24,10 @@
     "url": "https://github.com/eedrah/learning-SlushPages/issues"
   },
   "homepage": "https://github.com/eedrah/learning-SlushPages",
-  "dependencies": {},
+  "dependencies": {
+    "babelify": "^6.1.3",
+    "react": "^0.13.3"
+  },
   "devDependencies": {
     "browserify": "^10.0.0",
     "budo": "^4.0.0",
