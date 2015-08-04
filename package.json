@@ -4,8 +4,12 @@
   "description": "This is a description",
   "main": "index.js",
   "scripts": {
-    "start": "budo index.js -d --serve bundle.js --live",
-    "build": "browserify index.js -o bundle.js -g uglifyify",
+    "build": "npm run build-css && npm run build-js",
+    "build-css": "postcss -c postcss.json",
+    "build-js": "browserify index.js -o bundle.js -g uglifyify",
+    "start": "(npm run watch-css & npm run watch-live)",
+    "watch-css": "postcss -w -c postcss.json",
+    "watch-live": "budo index.js -d --serve bundle.js --live",
     "test": "browserify test.js | smokestack | tap-spec",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
     "push": "gh-pages -d dist",
@@ -27,7 +31,9 @@
   },
   "homepage": "https://github.com/eedrah/learning-SlushPages",
   "dependencies": {
+    "autoprefixer": "^5.2.0",
     "babelify": "^6.1.3",
+    "postcss-cli": "^1.5.0",
     "react": "^0.13.3"
   },
   "devDependencies": {
