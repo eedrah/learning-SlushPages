@@ -1,13 +1,12 @@
 var React = require('react')
-var r = React.DOM
 
-var App = React.createClass({
-  render: function () {
-    return r.span({}, 'wooo!')
+class App extends React.Component {
+  render () {
+    return <span>wooo!</span>
   }
-})
+}
 
 React.render(
-  React.createElement(App, {}),
+  <App />,
   document.querySelector('main')
 )
