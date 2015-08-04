@@ -12,7 +12,9 @@
     "deploy": "npm run build && npm run dist && npm run push"
   },
   "browserify": {
-    "transform": []
+    "transform": [
+      "babelify"
+    ]
   },
   "repository": {
     "type": "git",
